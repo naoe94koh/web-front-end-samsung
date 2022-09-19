@@ -85,6 +85,82 @@
 </pre>
       </article>
 
+      <section>
+        <h2>표 설계(design)</h2>
+        <table class="table">
+          <caption class="a11y-hidden">HTML 용어 (자주 사용되는 HTML 용어에 대한 해설입니다)</caption>
+          <thead>
+            <tr>
+              <th scope="col">용어</th>
+              <th scope="col">설명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Document</td>
+              <td>문서</td>
+            </tr>
+            <tr>
+              <td>Element</td>
+              <td>요소</td>
+            </tr>
+            <tr>
+              <td>Open Tag</td>
+              <td>여는 태그</td>
+            </tr>
+            <tr>
+              <td>Closed Tag</td>
+              <td>닫는 태그</td>
+            </tr>
+            <tr>
+              <td>Self Closed Tag</td>
+              <td>스스로 닫는 태그</td>
+            </tr>
+            <tr>
+              <td>Attribute</td>
+              <td>속성</td>
+            </tr>
+            <tr>
+              <td>Value</td>
+              <td>값</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>행,열 제목을 가진 표</h2>
+        <table class="table table--flexible">
+          <caption class="sr-only">웹 프론트엔드 펀더멘탈(Web Front-end) 학습 계획표</caption>
+          <colgroup>
+            <col width="120" />
+            <col />
+            <col width="60" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">차수</th>
+              <th scope="col">학습 주제</th>
+              <th scope="col">시간</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1일차</th>
+              <td>
+                <ul class="table__list">
+                  <li>웹 프로그래밍 이해</li>
+                  <li>웹 표준과 접근성</li>
+                  <li>HTML 마크업</li>
+                  <li>CSS 스타일링</li>
+                </ul>
+              </td>
+              <td><span aria-label="8시간">8H</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
     </main>
 
     <footer class="site-info Container Container--inner Container--fluid">

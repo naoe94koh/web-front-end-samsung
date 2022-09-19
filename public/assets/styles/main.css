@@ -86,3 +86,58 @@ figure {
 .prop {
   color: #e72084;
 }
+
+.table {
+  position: relative;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid;
+}
+
+.table--flexible {
+  width: 100%;
+}
+
+.table th {
+  text-align: left;
+  background: #f7f6f3;
+}
+
+.table th,
+.table td {
+  border: 1px solid;
+  padding: 0.7em;
+}
+
+.a11y-hidden, .sr-only {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0,0,0,0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+caption.a11y-hidden,
+caption.sr-only {
+  position: static;
+}
+
+.table__list {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.table__list li {
+  margin-bottom: 8px;
+}
+
+/* pseudo class */
+.table__list li:last-child {
+  margin-bottom: 0;
+}
