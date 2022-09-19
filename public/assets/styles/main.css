@@ -6,6 +6,12 @@ body * {
   box-sizing: border-box;
 }
 
+/* <abbr title="abbrebiation"> */
+abbr[title] {
+  cursor: help;
+  text-decoration: none;
+}
+
 a {
   cursor: pointer;
   color: #0e739e;
@@ -32,24 +38,19 @@ figure {
   margin-left: auto;
   margin-right: auto;
 }
+
+.Container--inner {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
 .Container--fluid {
   width: 100%;
   max-width: 1280px;
 }
 
-.content {
-  padding: 32px;
-  background-color: #460e6e;  
-  color: white;
-}
-
-.navigation {
-  padding: 32px;
-  background-color: #0a7373;  
-  color: white;
-}
-.main {
-  padding: 32px;
-  background-color: magenta;
-  color: #610961;
+.fluid-image {
+  max-width: 744px;
+  width: 100%;
+  height: auto;
 }

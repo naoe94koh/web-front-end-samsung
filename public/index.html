@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
+
   <head>
     <meta charset="UTF-8" />
     <title>웹 애플리케이션을 구성하는 HTML 마크업</title>
@@ -8,19 +9,39 @@
     <link rel="icon" href="assets/favicon.png" />
     <link rel="stylesheet" href="assets/styles/main.css" />
   </head>
+
   <body>
 
-    <div class="Container content">
-      contents
-    </div>
+    <div class="Container Container--inner Container--fluid">
+      <h1>루트 요소</h1>
 
-    <div class="Container navigation">
-      navigation
-    </div>
+      <p>HTML &lt;html&gt; 요소는 HTML 문서의 루트(최상단 요소)를 나타내며, "루트 요소"라고도 부릅니다. 모든 다른 요소는 &lt;html&gt; 요소의 후손이어야 합니다.
+        (<a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/html" target="_blank" rel="noopener noreferrer">참고</a>)
+      </p>
 
-    <div class="Container main">
-      main contents
+      <!-- hyperlink: image element -->
+      <!-- image - source (path, url) / alternate text -->
+      <!-- <img src="assets/images/root-element.png" alt="CSS 코드를 사용해 문서의 뿌리(root) 요소를 스타일링 하는 방법을 도표로 제공" width="100%" /> -->
+
+      <!-- figure content -->
+      <!-- include image, caption element -->
+      <figure>
+        <img class="fluid-image" src="assets/images/root-element.png" alt="" />
+        <figcaption>CSS 코드를 사용해 문서의 뿌리(root) 요소를 스타일링 하는 방법을 도표로 제공</figcaption>
+      </figure>
+
+      <h2>학습 주제</h2>
+      <ul lang="en">
+        <li><abbr title="Hyper Text Markup Language">HTML</abbr></li>
+        <li><abbr title="Cascading Style Sheet">CSS</abbr></li>
+        <li>ECMAScript (JavaScript)</li>
+        <li>Node.js</li>
+        <li>Webpack</li>
+        <li>React</li>
+        <li>Next.js</li>
+      </ul>
     </div>
 
   </body>
+
 </html>
