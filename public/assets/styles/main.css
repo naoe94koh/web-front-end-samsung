@@ -1,0 +1,6 @@
+a {
+  cursor: pointer;
+  color: #0e739e;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
