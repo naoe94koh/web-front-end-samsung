@@ -1,17 +1,13 @@
-# Web Front-end
+# ECMAScript (JavaScript)
 
-웹 프론트엔드 펀더멘탈 학습 저장소
+웹 프로그래밍(programming) 언어
 
-- [x] 웹 프로그래밍 이해
-- [x] 웹 표준과 접근성
-- [x] HTML 마크업
-- [x] CSS 스타일링
-- [ ] JavaScript 프로그래밍
-- [ ] DOM API / 이벤트 핸들링
-- [ ] 객체 지향, 함수 프로그래밍
-- [ ] 비동기 통신 / 처리
-- [ ] Node.js 런타임 환경
-- [ ] Express 프레임워크
-- [ ] Front-end 개발 환경
-- [ ] React UI 라이브러리
-- [ ] Next.js 프레임워크
+1. JavaScript
+1. Modern ECMAScript
+
+## UI Design
+
+HTML 폼, CSS 스타일링 학습 자료
+
+- 디자인 분석 → 구현 : [폼 디자인](https://www.figma.com/file/rO5CSuCoDK5z6BC5dUWUZh/SignIn-%E2%8C%81-Coupang-(Share)/duplicate) 
+- 프리 프로세서 활용 : [Sass](https://sass-lang.com/)

@@ -1,13 +1,18 @@
 {
-    "recommendations": [
-        "robole.snippets-ranger",
-        "donjayamanne.githistory",
-        "formulahendry.auto-close-tag",
-        "formulahendry.auto-rename-tag",
-        "visualstudioexptteam.vscodeintellicode",
-        "zignd.html-css-class-completion",
-        "pucelle.vscode-css-navigation",
-        "bestvow.css-compressor",
-        "mkaufman.htmlhint",
-    ]
+  "recommendations": [
+    "robole.snippets-ranger",
+    "donjayamanne.githistory",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "visualstudioexptteam.vscodeintellicode",
+    "zignd.html-css-class-completion",
+    "pucelle.vscode-css-navigation",
+    "bestvow.css-compressor",
+    "mkaufman.htmlhint",
+    "sculove.translator",
+    "Tobermory.es6-string-html",
+    "stackbreak.comment-divider",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense"
+  ]
 }
