@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>웹 애플리케이션 레이아웃 디자인</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="웹 애플리케이션 레이아웃 스타일링 방법을 학습합니다." />
+    <link rel="icon" href="assets/favicon.png" />
+    
+    <!-- 언어 → 재사용 가능한 모듈 구성 → 라이브러리/프레임워크 활용 -->
+
+    <style type="text/tailwindcss">
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @layer components {
+        .Box {
+          @apply p-8 flex-1 text-center;
+        }
+      }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <!-- 4px grid -->
+
+  <body class="m-8">
+
+    <div class="md:flex md:items-center md:gap-2">
+      <div class="Box bg-red-300">A</div>
+      <div class="Box bg-red-500">B</div>
+      <div class="Box bg-red-700">C</div>
+      <div class="Box bg-red-900 text-red-100">D</div>
+    </div>
+
+  </body>
+
+</html>

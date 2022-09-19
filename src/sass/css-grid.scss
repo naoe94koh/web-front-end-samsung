@@ -1,0 +1,9 @@
+// 변수, 함수, 믹스인, 중첩 규칙, 반복문, 조건문
+
+$base-font-size: 16px;
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: $base-font-size * $i;
+  }
+}
