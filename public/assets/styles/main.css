@@ -6,7 +6,6 @@ body * {
   box-sizing: border-box;
 }
 
-/* <abbr title="abbrebiation"> */
 abbr[title] {
   cursor: help;
   text-decoration: none;
@@ -17,6 +16,18 @@ a {
   color: #0e739e;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+em {
+  font-style: normal;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 figure {
@@ -53,4 +64,25 @@ figure {
   max-width: 744px;
   width: 100%;
   height: auto;
+}
+
+.site-info {
+  padding: 32px 0;
+  margin-bottom: 200px;
+}
+
+.code-block {
+  border-radius: 6px;
+  padding: 1em;
+  background-color: #222;
+  color: #eee;
+  line-height: 1.5;
+}
+
+.selector {
+  color:#0cf0f0;
+}
+
+.prop {
+  color: #e72084;
 }
