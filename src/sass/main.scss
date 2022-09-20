@@ -1,3 +1,8 @@
 @use 'base';
 @use 'common';
 @use 'components';
+@use 'functions' as *;
+
+p {
+  font-size: rem(14);
+}

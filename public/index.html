@@ -8,19 +8,23 @@
     <link rel="icon" href="assets/favicon.png" />
     <link rel="stylesheet" href="styles/main.css" />
     <script src="utils/typeOf.js"></script>
-    <script src="scripts/main.js" defer></script>
-    <!-- <script src="learn/04-data-types.js" defer></script> -->
+    <!-- <script src="scripts/main.js" defer></script> -->
+    <script src="learn/05-type-conversion.js" defer></script>
   </head>
   
   <body>
     
     <div id="target" class="container container--fluid container--inner">
       <h1>Sass 프리프로세싱</h1>
-      <p>Sass 전처리기를 사용해 CSS a파일로 컴파일</p>
+      <p data-target>Sass 전처리기를 사용해 CSS 파일로 컴파일</p>
 
       <!-- Form Elements -->
       <!-- BEM 방법론 -->
-      <button type="button" class="Button Button--xs">저장</button>
+      <!-- WAI-ARIA 표준 기술 : 접근성 향상 -->
+      <div class="ButtonGroup">
+        <button type="button" aria-label="글자 크기 증가" class="Button Button--xl">+</button>
+        <button type="button" aria-label="글자 크기 감소" class="Button Button--xl Button--secondary">-</button>
+      </div>
       <!-- <button type="button" class="Button Button--secondary">전송</button> -->
       <!-- <button type="button" class="Button Button--xl" disabled>취소</button> -->
     </div>

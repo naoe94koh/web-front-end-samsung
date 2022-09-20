@@ -9,6 +9,7 @@
   border-radius: rem(6);
   padding: em(12) em(24);
   background: rgba($blue, 0.9);
+  transition: background 400ms linear;
   color: $white;
 
   // hover state
@@ -44,6 +45,9 @@
 
   // mode state
   &--secondary {
-    background: $purple;
+    background: rgba($purple, 0.9);
+    &:hover {
+      background: rgba($purple, 1);
+    }
   }
 }
