@@ -1,12 +1,24 @@
-@use '../variables';
+@use '../variables' as *;
 
 .container {
-  width: 100%;
-  max-width: variables.$max-width;
+  width: $max-width;
 
   // 중첩 규칙
   margin: {
     left: auto;
     right: auto;
+  }
+
+  // parent selector
+  &--inner {
+    padding: {
+      left: 16px;
+      right: 16px;
+    }
+  }
+
+  &--fluid {
+    width: 100%;
+    max-width: $max-width;
   }
 }

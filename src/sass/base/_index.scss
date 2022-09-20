@@ -1,9 +1,13 @@
-@use '../variables';
+@use '../variables' as *;
 
 body {
   margin: 0;
-  background: variables.$white;
-  color: variables.$black;
+  background: $white;
+  color: $black;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 abbr[title] {

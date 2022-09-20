@@ -1,1 +1,29 @@
-body{margin:0;background:#fff;color:#000}abbr[title]{cursor:help;text-decoration:none}.container{width:100%;max-width:1440px;margin-left:auto;margin-right:auto}
+body {
+  margin: 0;
+  background: #fff;
+  color: #000;
+}
+body * {
+  box-sizing: border-box;
+}
+
+abbr[title] {
+  cursor: help;
+  text-decoration: none;
+}
+
+.container {
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container--inner {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.container--fluid {
+  width: 100%;
+  max-width: 1440px;
+}
+
+/*# sourceMappingURL=main.css.map */
