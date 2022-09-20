@@ -1,12 +1,13 @@
+$white: #fff;
+$black: #000;
+
 body {
   margin: 0;
-  background: #fff;
-  color: #fff;
+  background: $white;
+  color: $white;
 }
 
 abbr[title] {
   cursor: help;
   text-decoration: none;
 }
-
-/*# sourceMappingURL=main.css.map */
