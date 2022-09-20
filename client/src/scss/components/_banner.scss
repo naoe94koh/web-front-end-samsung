@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+.banner {
+  background: red;
+
+  @include mq(md) {
+    background: indigo;
+  }
+  @include mq(lg) {
+    background: skyblue;
+  }
+  @include mq(xl) {
+    background: hotpink;
+  }
+}

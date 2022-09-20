@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "sass:compile": "sass --update client/src/sass:client/public/styles",
+    "sass:watch": "npm run sass:compile -- --watch",
+    "sass:build": "sass --style=compressed --no-source-map client/src/sass:client/public/styles"
+  },
+  "devDependencies": {
+    "sass": "1.54.9"
+  }
+}

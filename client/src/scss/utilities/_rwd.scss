@@ -1,0 +1,8 @@
+@use 'sass:list';
+@use '../abstracts' as *;
+
+@each $ratio in $media-ratios {
+  $width: list.nth($ratio, 1);
+  $height: list.nth($ratio, 2);
+  @include make-rwd-media($width, $height);
+}

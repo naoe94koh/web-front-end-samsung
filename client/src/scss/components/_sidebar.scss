@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+
+.sidebar {
+  color: red;
+
+  @include mq(md) {
+    color: icolorigo;
+  }
+  @include mq(lg) {
+    color: skyblue;
+  }
+  @include mq(xl) {
+    color: hotpink;
+  }
+}
