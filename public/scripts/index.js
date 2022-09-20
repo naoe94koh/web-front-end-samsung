@@ -2,20 +2,32 @@ import {
   isDarkMode,
   addDarkMode,
   removeDarkMode,
+  saveDarkMode,
+  loadDarkMode,
   setButtonLabel,
+  typeOf,
 } from '../utils/index.js';
 
-const darkModeButton = document.querySelector('[data-dark-mode]');
+(function init() {
+  const darkModeButton = document.querySelector('[data-dark-mode]');
 
-darkModeButton?.addEventListener('click', ({ target: buttonElement }) => {
-  // if, else, else if
-  if (isDarkMode()) {
-    removeDarkMode();
-    setButtonLabel(buttonElement, '다크 모드 전환');
-  } else {
+  if (loadDarkMode() === 'on') {
     addDarkMode();
-    setButtonLabel(buttonElement, '라이트 모드 전환');
+    setButtonLabel(darkModeButton, '라이트 모드 전환');
   }
-});
 
-// switch, case, default, break
+  darkModeButton?.addEventListener('click', ({ target: buttonElement }) => {
+    // if, else, else if
+    if (isDarkMode()) {
+      removeDarkMode();
+      saveDarkMode('off');
+      setButtonLabel(buttonElement, '다크 모드 전환');
+    } else {
+      addDarkMode();
+      saveDarkMode('on');
+      setButtonLabel(buttonElement, '라이트 모드 전환');
+    }
+  });
+
+  // switch, case, default, break
+})();
