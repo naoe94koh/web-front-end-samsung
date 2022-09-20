@@ -1,10 +1,9 @@
-$white: #fff;
-$black: #000;
+@use '../variables';
 
 body {
   margin: 0;
-  background: $white;
-  color: $black;
+  background: variables.$white;
+  color: variables.$black;
 }
 
 abbr[title] {

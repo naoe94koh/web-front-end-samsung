@@ -9,4 +9,11 @@ abbr[title] {
   text-decoration: none;
 }
 
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*# sourceMappingURL=main.css.map */
