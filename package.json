@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "sass": "sass --watch --update src/sass:public/styles"
+    "dev": "npm run sass | npm run serve",
+    "sass": "sass --watch --update src/sass:public/styles",
+    "serve": "live-server public --host=localhost --port=3000 --no-browser"
   },
   "devDependencies": {
     "live-server": "1.2.2",
