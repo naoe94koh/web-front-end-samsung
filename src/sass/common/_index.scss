@@ -3,6 +3,8 @@
 .container {
   width: 100%;
   max-width: variables.$max-width;
+
+  // 중첩 규칙
   margin: {
     left: auto;
     right: auto;
