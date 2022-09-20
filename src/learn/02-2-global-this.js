@@ -2,6 +2,12 @@
 /* Global This                                                           */
 /* --------------------------------------------------------------------- */
 
+// console.log(globalThis);
+// console.log(global);
+// console.log(window);
+// console.log(this);
+// console.log(self);
+
 var objectVariable = '전역 객체의 변수';
 let declarativeVariable = '전역 변수';
 
