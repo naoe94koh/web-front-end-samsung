@@ -34,3 +34,30 @@ let declarativeVariable = '전역 변수';
 // console.log(window);
 // console.log(this);
 // console.log(self);
+
+/* -------------------------------------------------------------------------- */
+/* null vs. undefined                                                         */
+/* -------------------------------------------------------------------------- */
+
+// DOM API + Modern ES(JavaScript) = Programming
+// jQuery Library: DOM 접근 / 조작, 확장 (플러그인)
+
+// React Framework (Node.js + React + ES.Next)
+
+// DOM API
+// 문서 대상(요소) 노드 찾기
+// let targetElements = document.getElementsByTagName('div'); // HTMLCollection
+
+// 문서객체모델(DOM) 콘텐츠가 준비되면 코드를 실행하는 이벤트
+document.addEventListener('DOMContentLoaded', function () {
+  // HTML 문서에서 요소 노드를 찾고자 하였으나, 찾지 못했을 때 null
+  let targetElement = null;
+
+  // DOM Events API
+  // 실제 코드가 언제 실행되어 대상을 기억하는가?
+  let bodyElement = document.querySelector('body');
+  console.log(bodyElement); // null
+
+  targetElement = document.getElementById('target');
+  console.log(targetElement);
+});

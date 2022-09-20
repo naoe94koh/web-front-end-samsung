@@ -6,6 +6,16 @@
 /* ECMAScript의 8가지 데이터 타입 -------------------------------------------- */
 
 // 1. 존재하지 않는(nothing) 값 / 비어있는(empty) 값 / 알 수 없는(unknown) 값
+let isNotDefined = undefined;
+let unknown; // undefined
+let dontHas = null;
+
+// console.log(isNotDefined);
+// console.log(unknown);
+// console.log(dontHas);
+
+console.log(document);
+
 // 2. 값이 할당되지 않은 상태
 // 3. 따옴표를 사용해 묶은 텍스트(큰", 작은', 역`)
 // 4. 정수, 부동 소수점 숫자(길이 제약)
