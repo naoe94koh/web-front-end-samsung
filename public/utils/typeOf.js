@@ -1,50 +1,50 @@
-function typeOf(data) {
+export function typeOf(data) {
   // Prototype : OOJS
   // 메서드 빌려쓰기 패턴
   return Object.prototype.toString.call(data).slice(8, -1).toLowerCase();
 }
 
 // null
-function isNull(data) {
+export function isNull(data) {
   return typeOf(data) === 'null';
 }
 
 // undefined
-function isUndefined(data) {
+export function isUndefined(data) {
   return typeOf(data) === 'undefined';
 }
 
 // string
-function isString(data) {
+export function isString(data) {
   return typeOf(data) === 'string';
 }
 
 // number
-function isNumber(data) {
+export function isNumber(data) {
   return typeOf(data) === 'number';
 }
 
 // bigint
-function isBigInt(data) {
+export function isBigInt(data) {
   return typeOf(data) === 'bigint';
 }
 // boolean
-function isBoolean(data) {
+export function isBoolean(data) {
   return typeOf(data) === 'boolean';
 }
-// function
-function isNull(data) {
-  return typeOf(data) === 'null';
+// export function
+export function isFunction(data) {
+  return typeOf(data) === 'function';
 }
 // array
-function isArray(data) {
+export function isArray(data) {
   return typeOf(data) === 'array';
 }
 // object
-function isObject(data) {
+export function isObject(data) {
   return typeOf(data) === 'object';
 }
 // symbol
-function isSymbol(data) {
+export function isSymbol(data) {
   return typeOf(data) === 'symbol';
 }

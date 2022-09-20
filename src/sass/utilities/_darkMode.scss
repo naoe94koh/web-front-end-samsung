@@ -1,0 +1,13 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
+@include darkMode() {
+  body {
+    background: $black;
+    color: $white;
+  }
+  .Button {
+    background: $white;
+    color: $blue;
+  }
+}

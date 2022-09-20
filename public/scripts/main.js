@@ -125,8 +125,13 @@ numberInput?.addEventListener('change', ({ target: eventTarget }) => {
   min = Number(min);
   max = Number(max);
 
-  if (min > value) value = min;
-  if (max < value) value = max;
+  if (min > value) {
+    value = min;
+  }
+
+  if (max < value) {
+    value = max;
+  }
 
   eventTarget.value = value;
 
@@ -134,3 +139,7 @@ numberInput?.addEventListener('change', ({ target: eventTarget }) => {
     font-size: ${value}px;
   `;
 });
+
+/* -------------------------------------------------------------------------- */
+/* Condition Flow                                                             */
+/* -------------------------------------------------------------------------- */

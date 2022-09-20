@@ -7,8 +7,11 @@
     <title>ECMAScript(JavaScript) 프로그래밍</title>
     <link rel="icon" href="assets/favicon.png" />
     <link rel="stylesheet" href="styles/main.css" />
-    <script src="utils/typeOf.js"></script>
-    <script src="scripts/main.js" defer></script>
+    <!-- <script src="utils/typeOf.js"></script>
+    <script src="utils/dom.js"></script>
+    <script src="utils/darkMode.js"></script>
+    <script src="scripts/main.js" defer></script> -->
+    <script type="module" src="scripts/index.js" defer></script>
     <!-- <script src="learn/05-type-conversion.js" defer></script> -->
 
     <style>
@@ -44,6 +47,8 @@
       </div> -->
       <!-- <button type="button" class="Button Button--secondary">전송</button> -->
       <!-- <button type="button" class="Button Button--xl" disabled>취소</button> -->
+
+      <button type="button" data-dark-mode class="Button Button--lg">다크 모드 전환</button>
     </div>
 
     <!-- defer 속성이 설정된 스크립트 실행 위치 -->

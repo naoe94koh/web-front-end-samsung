@@ -97,4 +97,13 @@ abbr[title] {
   color: inherit;
 }
 
+.dark body {
+  background: #000;
+  color: #fff;
+}
+.dark .Button {
+  background: #fff;
+  color: #049cf1;
+}
+
 /*# sourceMappingURL=main.css.map */
