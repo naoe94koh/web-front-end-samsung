@@ -6,10 +6,13 @@ import {
   loadDarkMode,
   setButtonLabel,
   typeOf,
+  getNode as $,
+  getNodeList as $$,
+  css,
 } from '../utils/index.js';
 
 (function init() {
-  const darkModeButton = document.querySelector('[data-dark-mode]');
+  const darkModeButton = $('[data-dark-mode]');
 
   if (loadDarkMode() === 'on') {
     addDarkMode();
@@ -17,7 +20,6 @@ import {
   }
 
   darkModeButton?.addEventListener('click', ({ target: buttonElement }) => {
-    // if, else, else if
     if (isDarkMode()) {
       removeDarkMode();
       saveDarkMode('off');

@@ -2,17 +2,25 @@
 /* Nullish Coalescing Operator                                            */
 /* ---------------------------------------------------------------------- */
 
-let emailAddress;
-let receivedEmailAddress;
+// null 병합 연산자
 
-if (emailAddress === undefined || emailAddress === null) {
-  receivedEmailAddress = 'user@company.io';
-} else {
-  receivedEmailAddress = emailAddress;
-}
+// let emailAddress;
+// let receivedEmailAddress;
+
+// if (emailAddress === undefined || emailAddress === null) {
+//   receivedEmailAddress = 'user@company.io';
+// } else {
+//   receivedEmailAddress = emailAddress;
+// }
+
+// let receivedEmailAddress =
+//   emailAddress === undefined || emailAddress === null
+//     ? 'user@company.io'
+//     : emailAddress;
+
+let receivedEmailAddress = emailAddress ?? 'user@company.io';
 
 // 위 조건 처리문을 nullish 병합 연산자를 사용한 식으로 변경합니다.
-
 
 /* ?? vs. || ----------------------------------------------------------- */
 // || → 첫번째 Truthy 값을 반환
