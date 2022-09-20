@@ -1,0 +1,23 @@
+@use '../variables' as *;
+@use '../functions' as *;
+@use '../common' as *;
+
+.FormControl {
+  &--vertical {
+    display: inline-flex;
+    flex-flow: column wrap;
+  }
+
+  label {
+    color: $blue;
+  }
+
+  &[data-hidden-label] label {
+    @extend %a11y-hidden;
+  }
+
+  input {
+    padding: em(8);
+    font-size: rem(16);
+  }
+}

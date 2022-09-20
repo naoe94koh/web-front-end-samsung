@@ -88,7 +88,7 @@ targetElement = document.getElementById('target');
 let nullType = null;
 let arrayType = [];
 let objectType = {};
-let functionType = function() {};
+let functionType = function () {};
 
 // typeof 연산자의 문제점
 
@@ -97,7 +97,7 @@ let functionType = function() {};
 // console.log(typeof objectType);
 // console.log(typeof functionType);
 
-console.log('--------------------------');
+// console.log('--------------------------');
 
 // typeOF 유틸리티 함수 (문제 보완)
 
@@ -106,7 +106,10 @@ console.log('--------------------------');
 // console.log(typeOf(objectType) === 'object');
 // console.log(typeOf(functionType) === 'function');
 
-
 let data = Math;
 
-console.assert(typeOf(data) === 'math', 'data는 Math 타입이 아닙니다.');
+// console.assert(typeOf(data) === 'math', 'data는 Math 타입이 아닙니다.');
+
+/* -------------------------------------------------------------------------- */
+/* Form Input Control                                                         */
+/* -------------------------------------------------------------------------- */
