@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "클라이언트 디버깅",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}",
+      "request": "launch",
+      "type": "node",
+    },
+  ]
+}

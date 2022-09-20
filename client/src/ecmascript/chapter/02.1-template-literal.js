@@ -16,6 +16,7 @@
 /* --------------------------------------------------------------------------------------- */
 
 function renderCard(card) {
+  // 데이터 바인딩
   return (
     '<div class="card">\
       <img src="' + card.image.src + '" class="card-img-top" alt="' + card.image.alt + '" />\
