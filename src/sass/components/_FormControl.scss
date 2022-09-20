@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../variables' as *;
 @use '../functions' as *;
 @use '../common' as *;
@@ -8,8 +9,10 @@
     flex-flow: column wrap;
   }
 
+  color: color.adjust($blue, $lightness: -10%);
+
   label {
-    color: $blue;
+    margin-bottom: rem(4);
   }
 
   &[data-hidden-label] label {
@@ -17,7 +20,10 @@
   }
 
   input {
+    border: 1px solid currentColor;
+    border-radius: rem(8);
     padding: em(8);
     font-size: rem(16);
+    color: inherit;
   }
 }

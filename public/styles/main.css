@@ -79,16 +79,22 @@ abbr[title] {
   background: #5d3ac0;
 }
 
+.FormControl {
+  color: #037cbf;
+}
 .FormControl--vertical {
   display: inline-flex;
   flex-flow: column wrap;
 }
 .FormControl label {
-  color: #049cf1;
+  margin-bottom: 0.25rem;
 }
 .FormControl input {
+  border: 1px solid currentColor;
+  border-radius: 0.5rem;
   padding: 0.5em;
   font-size: 1rem;
+  color: inherit;
 }
 
 /*# sourceMappingURL=main.css.map */

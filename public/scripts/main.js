@@ -106,10 +106,31 @@ let functionType = function () {};
 // console.log(typeOf(objectType) === 'object');
 // console.log(typeOf(functionType) === 'function');
 
-let data = Math;
-
+// let data = Math;
 // console.assert(typeOf(data) === 'math', 'data는 Math 타입이 아닙니다.');
 
 /* -------------------------------------------------------------------------- */
 /* Form Input Control                                                         */
 /* -------------------------------------------------------------------------- */
+
+const target = document.querySelector('[data-target]');
+let targetFontSize = parseInt(getComputedStyle(target).fontSize, 10);
+
+const numberInput = document.getElementById('change-font-size');
+numberInput?.setAttribute('value', targetFontSize);
+
+numberInput?.addEventListener('change', ({ target: eventTarget }) => {
+  let { value, min, max } = eventTarget;
+  value = Number(value);
+  min = Number(min);
+  max = Number(max);
+
+  if (min > value) value = min;
+  if (max < value) value = max;
+
+  eventTarget.value = value;
+
+  target.style.cssText = `
+    font-size: ${value}px;
+  `;
+});

@@ -10,6 +10,12 @@
     <script src="utils/typeOf.js"></script>
     <script src="scripts/main.js" defer></script>
     <!-- <script src="learn/05-type-conversion.js" defer></script> -->
+
+    <style>
+      p {
+        font-size: 20px;
+      }
+    </style>
   </head>
   
   <body>
@@ -18,11 +24,11 @@
       <h1>Sass 프리프로세싱</h1>
 
       <!-- Form Elements -->
-      <form>
+      <form class="Form">
         
-        <div class="FormControl FormControl--vertical" data-hidden-label>
+        <div class="FormControl FormControl--vertical">
           <label for="change-font-size">글자 크기 변경</label>
-          <input id="change-font-size" type="number" />
+          <input id="change-font-size" type="number" min="10" value="99" step="1" max="100" />
         </div>
         
       </form>
