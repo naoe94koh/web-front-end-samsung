@@ -29,6 +29,10 @@ function getBooks() {
     });
 }
 
+// TDD(BDD) - Testing Library / React (Jest)
+// vs.
+// CDD - Storybook / React
+
 // getBooks();
 
 // Async Function
@@ -57,3 +61,26 @@ const requestBooks = async () => {
 //   }
 
 // }
+
+// Jest 테스트 수행
+
+// test('desc', () => {
+//   // 비동기 처리
+//   return fetchBooks()
+//     .then((response)=> response.json())
+//     .then(json => {
+//       expect(received).toBe(expected);
+//     })
+//     .catch(error => console.error(error.message));
+// })
+
+// test('desc', async () => {
+//   // 비동기 처리
+//   try {
+//     const response = await fetchBooks();
+//     const json = await response.json();
+//     expect(received).toBe(expected);
+//   } catch (error) {
+//     console.error(error.message)
+//   }
+// })
