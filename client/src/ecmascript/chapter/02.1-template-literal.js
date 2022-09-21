@@ -15,6 +15,19 @@
 
 /* --------------------------------------------------------------------------------------- */
 
+const drawCard = ({ title, description, image, link }) => {
+  return `
+    <div class="card">
+      <img src="${image.src}" class="card-img-top" alt="${image.alt}" />
+      <div class="card-body">
+        <h5 class="card-title">${title}</h5>
+        <p class="card-text">${description}</p>
+        <a href="${link.href}" class="btn btn-primary">${link.text}</a>      
+      </div>
+    </div>
+  `;
+}
+
 function renderCard(card) {
   // 데이터 바인딩
   return (
@@ -50,5 +63,6 @@ const cardInfo = {
 };
 
 let rendered = removeSpaceString(renderCard(cardInfo));
+let drawed = drawCard(cardInfo);
 
-console.log(rendered);
+console.log(drawed);

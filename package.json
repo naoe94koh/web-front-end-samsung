@@ -3,7 +3,8 @@
     "sass:compile": "sass --update client/src/scss:client/public/styles",
     "sass:watch": "npm run sass:compile -- --watch",
     "sass:build": "sass --style=compressed --no-source-map client/src/scss:client/public/styles",
-    "babel:compile": "babel client/src/ecmascript -d client/public/scripts"
+    "babel:compile": "babel client/src/ecmascript -d client/public/scripts",
+    "babel:watch": "npm run babel:compile -- --watch"
   },
   "devDependencies": {
     "@babel/cli": "7.18.10",
