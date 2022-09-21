@@ -1,103 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-<head>
-  <meta charset="UTF-8" />
-  <title>React 애플리케이션 학습</title>
-  <meta name="description" content="React 개발 방법에 대해 학습합니다." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="//vectorlogo.zone/logos/reactjs/reactjs-icon.svg" />
-  <script src="//unpkg.com/react/umd/react.development.js" crossorigin></script>
-  <script src="//unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
-</head>
-<body>
 
-  <div id="root"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React 애플리케이션 학습</title>
+    <meta name="description" content="React 개발 방법에 대해 학습합니다." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="//vectorlogo.zone/logos/reactjs/reactjs-icon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/dom-script.js" defer></script>
+    <script src="//unpkg.com/react/umd/react.development.js" crossorigin></script>
+    <script src="//unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+    <script src="js/react.js" defer></script>
+  </head>
 
-  <script>
-    {
-      // DOM API + ES(JS)
-      const app = document.createElement('div');
-      app.classList.add('app');
+  <body>
 
-      const headline = document.createElement('h1');
-      headline.textContent = 'React 프로그래밍';
+    <div id="dom-js-root"></div>
 
-      const list = document.createElement('ul');
-      
-      let items = 'UI 빌딩 라이브러리, 가상 DOM을 사용해 UI 업데이트'.split(', ');
-
-      items = items.map(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = item;
-        return listItem;
-      });
-
-      items.forEach(listItemElement => {
-        list.append(listItemElement);
-      });
-
-      app.append(headline);
-      app.append(list);
-
-      // const root = document.getElementById('root');
-      // root.append(app);
-
-    }
-  </script>
-
-  <script>
-    // React + ReactDOM
-    // Virtual DOM Node = React Element
-    // console.log(React.version);
-
-    const {createElement: h} = React;
-
-    const headline = h('h1', null, 'React 프로그래밍');
+    <hr />
     
-    // const listItem1 = h('li', null, 'UI 빌딩 라이브러리');
-    // const listItem2 = h('li', null, '가상 DOM을 사용해 UI 업데이트<');
-    // const list = h('ul', null, listItem1, listItem2);
+    <div id="react-root"></div>
 
-    const state = Object.freeze({
-      features: 'UI 빌딩 라이브러리, 가상 DOM을 사용해 UI 업데이트'.split(', ')
-    })
+  </body>
 
-    const list = h('ul', {
-      children: state.features.map((feature, index) => h('li', {key: index}, feature))
-    });
-
-    const app = h('div', { className: 'app' }, headline, list);
-
-    // Virtual DOM Tree
-    // React Element Tree
-    // React Root Element
-    // console.log(app);
-
-
-    const container = document.getElementById('root');
-
-    // v17 API
-    // ReactDOM.render(app, container, () => {
-    //   console.log('React 애플리케이션 마운팅 됨');
-    // });
-
-    // v18+ API
-    const reactDomRoot = ReactDOM.createRoot(container);
-    reactDomRoot.render(app);
-
-    setTimeout(() => reactDomRoot.unmount(), 3000);
-
-  </script>
-
-
-
-  <!-- <div class="app">
-    <h1>React 프로그래밍</h1>
-    <ul>
-      <li>UI 빌딩 라이브러리</li>
-      <li>가상 DOM을 사용해 UI 업데이트</li>
-    </ul>
-  </div> -->
-  
-</body>
 </html>

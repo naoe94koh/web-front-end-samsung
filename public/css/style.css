@@ -1,0 +1,9 @@
+body {
+  margin: 4rem;
+}
+
+hr {
+  margin: 24px 0;
+  border: 0;
+  border-top: 0.1px solid #999;
+}
