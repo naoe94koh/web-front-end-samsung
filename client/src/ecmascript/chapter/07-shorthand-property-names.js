@@ -23,7 +23,27 @@ const watch = () => {
 
 var euid = {
   name: '이듬',
-  show: show,
-  look: look,
+  get nickname() {
+    return '닉네임: ' + this.name;
+  },
+  set nickname(newName) {
+    this.name = newName;
+  },
+  show: function () {
+    return `${this.name} 보다.`;
+  },
+  look() {
+    return `${this.name} 지켜보다.`;
+  },
   watch: watch,
 };
+
+// console.log(euid.show());
+// console.log(euid.look());
+// console.log(euid.watch());
+
+console.log(euid.nickname);
+
+euid.nickname = '하월';
+
+console.log(euid.nickname);
