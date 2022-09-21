@@ -47,22 +47,30 @@ const company = Object.freeze({
 
 let companyName, companyLat;
 
-if ('companyName' in company) {
-  companyName = company.companyName;
-}
+// if ('companyName' in company) {
+//   companyName = company.companyName;
+// }
+
+companyName = company?.companyName;
 
 console.log('companyName = ', companyName);
 
-if ('location' in company) {
-  if ('lat' in company.location) companyLat = company.location.lat;
-}
+// if ('location' in company) {
+//   if ('lat' in company.location) companyLat = company.location.lat;
+// }
+
+companyLat = company?.location?.lat;
 
 console.log('companyLat = ', companyLat);
 
-if ('getFoundingDate' in company) {
-  if (typeof company.getFoundingDate === 'function') company.getFoundingDate();
-}
+// if ('getFoundingDate' in company) {
+//   if (typeof company.getFoundingDate === 'function') company.getFoundingDate();
+// }
 
-if ('getLocation' in company) {
-  if (typeof company.getLocation === 'function') company.getLocation();
-}
+company.getFoundingDate?.();
+
+// if ('getLocation' in company) {
+//   if (typeof company.getLocation === 'function') company.getLocation();
+// }
+
+company.getLocation?.();
