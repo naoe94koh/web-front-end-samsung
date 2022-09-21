@@ -1,21 +1,41 @@
-const http = require('http');
-const HOST = 'localhost';
-const PORT = 4000;
+const livereload = require('livereload');
+const connectLivereload = require('connect-livereload');
+const express = require('express');
+const path = require('path');
+const app = express();
 
-const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('안녕! Node.js 😉');
-  }
+let publicDir = path.resolve('client/public');
 
-  if (req.url === '/api/subjects') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(
-      JSON.stringify(
-        'HTML CSS ECMAScript(JavaScript) Node.js Express'.split(' ')
-      )
-    );
-  }
+const liveReloadServer = livereload.createServer();
+liveReloadServer.watch([publicDir]);
+liveReloadServer.server.once('connection', () => {
+  setTimeout(() => {
+    liveReloadServer.refresh('/');
+  }, 100);
 });
 
-server.listen(PORT, () => console.log(`웹 서버 구동 http://${HOST}:${PORT}`));
+app.use(express.json());
+app.use(express.static(publicDir));
+app.use(connectLivereload());
+
+const PORT = 3000;
+const HOSTNAME = 'localhost';
+
+app.get('/', (req, res) => {
+  res.send();
+  // res.redirect('/hello');
+});
+
+app.get('/hello', (req, res) => {
+  res.status(200);
+  res.send('안녕! Node.js');
+});
+
+app.get('/api/members', (req, res) => {
+  res.status(200);
+  res.json(['yamoo9', 'designer']);
+});
+
+app.listen(PORT, HOSTNAME, () => {
+  console.log(`Express 애플리케이션 http://${HOSTNAME}:${PORT}`);
+});
