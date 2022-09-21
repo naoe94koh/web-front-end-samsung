@@ -1,16 +1,21 @@
-// const { loop } = require('./utils/loop');
-// const { delay } = require('./utils/delay');
-// const { getRandomMinMax } = require('./utils/getRanodm');
+const path = require('path');
+const { getFileName, loop, getRandomMinMax, delay } = require('./utils');
 
-const { loop, getRandomMinMax, delay } = require('./utils');
+let filePath = '../client/src/scss/components/_banner.scss';
+// console.log(getFileName(filePath));
+
+let logoPath = path.join('client', 'public', 'assets', 'logo.svg');
+console.log(logoPath);
+
+logoPath = path.resolve('client', 'public', 'assets', 'logo.svg');
+console.log(logoPath);
+
+logoPath = path.join(__dirname, 'client', 'public', 'assets', 'logo.svg');
+console.log(logoPath);
+
+logoPath = path.join(process.cwd(), 'client', 'public', 'assets', 'logo.svg');
+console.log(logoPath);
 
 function rollDice(n = 6) {
   return getRandomMinMax(1, n);
 }
-
-loop(() => {
-  console.log(rollDice(8));
-});
-
-// delay().then() => console.log(rollDice());
-// delay(2000).then() => console.log(rollDice(16));
