@@ -7,19 +7,28 @@
 /* 배열 전개 ------------------------------------------------------------------- */
 
 var integers = [-1, 0, 32, -101, 24];
+// 메서드 빌려쓰기 패턴
+// 새.날다.[call|apply|bind](사람)
 var maxInt = Math.max.apply(Math, [302, 1, 2, 30, -101].concat(integers));
 
+maxInt = Math.max(...[302, 1, 2, 30, -101, ...integers]);
+// console.log(maxInt);
 
 /* 객체 전개 ------------------------------------------------------------------- */
 
 // 객체 합성 유틸리티 함수
+
+// 객체 (얕은 복사 vs. 깊은 복사)
+// 객체 합성(mixin)
+// Object.assign(o1, o2, ..., oN)
+
 var extend = function () {
   var _mixinObject = arguments[0];
   var _restObjects = [].slice.call(arguments, 1);
 
   var _mixin = function (o1, o2) {
     for (var key in o2) {
-      if ({}.hasOwnProperty.call(o2, key)) {
+      if (Object.prototype.hasOwnProperty.call(o2, key)) {
         var value = o2[key];
         if (value && typeof value === 'object' && value.length) {
           o1[key] = (o1[key] || []).concat(value);
@@ -41,8 +50,20 @@ var extend = function () {
 };
 
 // 상태 업데이트 유틸리티 함수
-var setState = function(newState) {
-  return extend({}, state, newState);
+// var setState = function (newState) {
+//   return extend({}, state, newState);
+// };
+
+const setState = (newState, callback) => {
+  // [object] state, newState
+
+  // 객체 합성
+  // for ~ in
+  return {
+    ...state,
+    ...newState,
+    data: [...state.data, ...newState.data],
+  };
 };
 
 /* -------------------------------------------------------------------------- */
@@ -56,9 +77,9 @@ var state = Object.freeze({
   data: [{ id: 101, title: '초기 데이터' }],
 });
 
-var updatedState = setState({ 
+var updatedState = setState({
   loading: true,
-  data: [{ id: 201, title: '데이터 업데이트' }]
-})
+  data: [{ id: 201, title: '데이터 업데이트' }],
+});
 
-console.log(updatedState);
+console.log(JSON.stringify(updatedState, null, 2));
