@@ -1,0 +1,23 @@
+{
+  "name": "web-front-end-samsung",
+  "version": "1.0.0",
+  "description": "React 라이브리러 사용법",
+  "scripts": {
+    "dev": "live-server public --no-browser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yamoo9/web-front-end-samsung.git"
+  },
+  "keywords": [
+    "React",
+    "Web"
+  ],
+  "bugs": {
+    "url": "https://github.com/yamoo9/web-front-end-samsung/issues"
+  },
+  "homepage": "https://github.com/yamoo9/web-front-end-samsung#readme",
+  "devDependencies": {
+    "live-server": "1.2.2"
+  }
+}

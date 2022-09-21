@@ -9,13 +9,51 @@
 </head>
 <body>
 
-  <div class="app">
+  <div id="root"></div>
+
+  <script>
+    // DOM API + ES(JS)
+    const app = document.createElement('div');
+    app.classList.add('app');
+
+    const headline = document.createElement('h1');
+    headline.textContent = 'React 프로그래밍';
+
+    const list = document.createElement('ul');
+    
+    let items = 'UI 빌딩 라이브러리, 가상 DOM을 사용해 UI 업데이트'.split(', ');
+
+    items = items.map(item => {
+      const listItem = document.createElement('li');
+      listItem.textContent = item;
+      return listItem;
+    });
+
+    items.forEach(listItemElement => {
+      list.append(listItemElement);
+    });
+
+    app.append(headline);
+    app.append(list);
+
+    // const root = document.getElementById('root');
+    // root.append(app);
+
+  </script>
+
+  <script>
+    // React + ReactDOM
+  </script>
+
+
+
+  <!-- <div class="app">
     <h1>React 프로그래밍</h1>
     <ul>
       <li>UI 빌딩 라이브러리</li>
       <li>가상 DOM을 사용해 UI 업데이트</li>
     </ul>
-  </div>
+  </div> -->
   
 </body>
 </html>
