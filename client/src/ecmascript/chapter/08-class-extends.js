@@ -125,7 +125,6 @@ var _AriaButton = createClass(
   Button
 );
 
-
 class AriaButton extends Button {
   static displayName = 'AriaButton';
   constructor(type, label, usingAria = true) {
@@ -135,5 +134,5 @@ class AriaButton extends Button {
 
   getVersion() {
     return AriaButton.version;
-  },
+  }
 }
