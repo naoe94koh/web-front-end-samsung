@@ -4,4 +4,4 @@ function rollDice(n = 6) {
   return getRandomMinMax(1, n);
 }
 
-loop(() => delay().then(() => console.log(rollDice())));
+delay(1900).then(() => console.log(rollDice()));
