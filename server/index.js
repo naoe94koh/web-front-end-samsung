@@ -1,82 +1,106 @@
 const livereload = require('livereload');
+const { MongoClient, ObjectId } = require('mongodb');
 const connectLivereload = require('connect-livereload');
 const express = require('express');
 const path = require('path');
 const app = express();
 
-let publicDir = path.join(__dirname, '../client/public');
+async function start() {
+  const client = await MongoClient.connect(
+    'mongodb://localhost:27017/demo-todos',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  );
 
-const liveReloadServer = livereload.createServer();
-liveReloadServer.watch(publicDir);
-liveReloadServer.server.once('connection', () => {
-  setTimeout(() => {
-    liveReloadServer.refresh('/');
-  }, 100);
-});
+  const db = client.db('demo-todos');
 
-app.use(express.json());
-app.use(express.static(publicDir));
-app.use(connectLivereload());
+  let publicDir = path.join(__dirname, '../client/public');
 
-const PORT = 3000;
-const HOSTNAME = 'localhost';
+  const liveReloadServer = livereload.createServer();
+  liveReloadServer.watch(publicDir);
+  liveReloadServer.server.once('connection', () => {
+    setTimeout(() => {
+      liveReloadServer.refresh('/');
+    }, 100);
+  });
 
-app.get('/', (req, res) => {
-  res.send();
-  // res.redirect('/hello');
-});
+  app.use(express.json());
+  app.use(express.static(publicDir));
+  app.use(connectLivereload());
 
-app.get('/hello', (req, res) => {
-  res.status(200);
-  res.send('안녕! Node.js');
-});
+  const PORT = 3000;
+  const HOSTNAME = 'localhost';
 
-app.get('/api/members', (req, res) => {
-  res.status(200);
-  res.json(['yamoo9', 'designer']);
-});
+  app.get('/', (req, res) => {
+    res.send();
+    // res.redirect('/hello');
+  });
 
-app.listen(PORT, HOSTNAME, () => {
-  console.log(`Express 애플리케이션 http://${HOSTNAME}:${PORT}`);
-});
+  app.get('/hello', (req, res) => {
+    res.status(200);
+    res.send('안녕! Node.js');
+  });
 
-/* Express + CRUD ----------------------------------------------------------- */
+  app.get('/api/members', (req, res) => {
+    res.status(200);
+    res.json(['yamoo9', 'designer']);
+  });
 
-const { todos: originTodos } = require('./db/todos');
-const todos = [...originTodos];
+  app.listen(PORT, HOSTNAME, () => {
+    console.log(`Express 애플리케이션 http://${HOSTNAME}:${PORT}`);
+  });
 
-// READ
-app.get('/api/todos', (req, res) => {
-  res.json(todos);
-});
+  /* Express + CRUD ----------------------------------------------------------- */
 
-// CREATE
-app.post('/api/todos', (req, res) => {
-  const newTodo = {
-    id: `todo-${todos.length + 1}`,
-    doit: req.body.doit,
-    done: false,
-  };
-  todos.push(newTodo);
-  res.json(newTodo);
-});
+  const { todos: originTodos } = require('./db/todos');
 
-// UPDATE
-app.put('/api/todos/:id', (req, res) => {
-  const todo = todos.find((todo) => todo.id === req.params.id);
-  if (!todo) {
-    return res.status(404);
-  }
-  todo.done = !todo?.done;
-  res.json(todo);
-});
+  // READ
+  app.get('/api/todos', async (req, res) => {
+    const todos = await db.collection('todos').find({}).toArray();
+    res.json(todos);
+  });
 
-// DELETE
-app.delete('/api/todos/:id', (req, res) => {
-  let deleteIndex = todos.findIndex((todo) => todo.id === req.params.id);
-  if (deleteIndex < 0) {
-    return res.status(404);
-  }
-  todos.splice(deleteIndex, 1);
-  res.json(todos);
-});
+  // CREATE
+  app.post('/api/todos', async (req, res) => {
+    const newTodo = {
+      doit: req.body.doit,
+      done: false,
+    };
+
+    const result = await db.collection('todos').insertOne(newTodo);
+
+    res.json({
+      ...newTodo,
+      _id: result.insertedId,
+    });
+  });
+
+  // UPDATE
+  app.put('/api/todos/:id', async (req, res) => {
+    const { id } = req.params;
+
+    const todo = await db
+      .collection('todos')
+      .find({ _id: ObjectId(id) })
+      .toArray();
+
+    await db
+      .collection('todos')
+      .updateOne({ _id: ObjectId(id) }, { $set: { done: !todo[0].done } });
+
+    const todos = await db.collection('todos').find({}).toArray();
+    res.json(todos);
+  });
+
+  // DELETE
+  app.delete('/api/todos/:id', async (req, res) => {
+    const { id } = req.params;
+    await db.collection('todos').deleteOne({ _id: ObjectId(id) });
+    const todos = await db.collection('todos').find({}).toArray();
+    res.json(todos);
+  });
+}
+
+start();
