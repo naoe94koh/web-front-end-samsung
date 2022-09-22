@@ -1,0 +1,22 @@
+:root {
+  --white: #fff;
+  --black: #000;
+}
+
+body {
+  margin: 0;
+  color: var(--black);
+  background: var(--white);
+}
+.App {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.App h1 {
+  font-size: 7rem;
+  font-weight: 100;
+}

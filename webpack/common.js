@@ -1,5 +1,8 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const __ROOT = process.cwd();
+
+let isProd = process.env.NODE_ENV?.includes('production');
 
 const commonConfig = {
   target: ['web'],
@@ -11,7 +14,7 @@ const commonConfig = {
   },
   output: {
     path: path.join(__ROOT, 'public'),
-    filename: '[name].js',
+    filename: '[name][contenthash].js',
   },
   module: {
     rules: [
@@ -23,7 +26,7 @@ const commonConfig = {
       {
         test: /\.css$/i,
         use: [
-          'style-loader',
+          !isProd ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -34,6 +37,8 @@ const commonConfig = {
       },
     ],
   },
+
+  plugins: [new MiniCssExtractPlugin()].filter(Boolean),
 };
 
 module.exports = commonConfig;
