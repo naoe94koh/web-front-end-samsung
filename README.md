@@ -1,17 +1,43 @@
-# Web Front-end
+# React 훅 & 컨텍스트 API
 
-웹 프론트엔드 펀더멘탈 학습 저장소
+React 훅, 컨텍스트 API를 포함한 다양한 주제를 학습합니다.
 
-- [x] 웹 프로그래밍 이해
-- [x] 웹 표준과 접근성
-- [x] HTML 마크업
-- [x] CSS 스타일링
-- [x] JavaScript 프로그래밍
-- [x] DOM API / 이벤트 핸들링
-- [x] 객체 지향, 함수 프로그래밍
-- [x] 비동기 통신 / 처리
-- [x] Node.js 런타임 환경
-- [x] Express 프레임워크
-- [x] Front-end 개발 환경
-- [ ] React UI 라이브러리
-- [ ] Next.js 프레임워크
+## Props Validation
+
+- [ ] 컴포넌트 Props 검사
+
+## Props Drilling
+
+- [ ] 컴포넌트 상태 관리의 어려움
+
+## React Hooks
+
+- [ ] 상태 관리
+- [ ] 사이드 이펙트
+  - [ ] 비동기 요청/응답
+  - [ ] DOM 요소 접근/조작
+  - [ ] 이벤트 구독/취소
+  - [ ] 오류 감지/처리
+- [ ] 레이아웃 이펙트
+- [ ] 콜백, 메모 (성능 저하 방지)
+- [ ] 리듀서, 액션, 디스패치
+- [ ] 고유 ID 생성
+
+## React HOC
+
+- [ ] 고차 컴포넌트 개념
+- [ ] React.forwardRef
+- [ ] React.memo
+
+## React Context API
+
+- [ ] 컨텍스트 생성
+- [ ] 컨텍스트 프로바이더
+- [ ] 컨텍스트 컨서머
+- [ ] 컨텍스트 HOC
+- [ ] 컨텍스트 커스텀 훅
+
+## CSS in JS
+
+- [ ] styled-components 라이브러리
+- [ ] Babel 플러그인
