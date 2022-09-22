@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "dev": "npm run serve",
+    "serve": "webpack serve --node-env=development -c webpack/dev.js",
+    "bundle": "webpack --node-env=development -c webpack/dev.js",
+    "build": "webpack build --node-env=production -c webpack/build.js"
+  },
+  "devDependencies": {
+    "webpack": "5.74.0",
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "4.11.1",
+    "webpack-merge": "5.8.0"
+  }
+}
