@@ -1,4 +1,9 @@
 {
+  "private": true,
+  "engines": {
+    "node": ">= 16",
+    "npm": ">= 8"
+  },
   "scripts": {
     "dev": "npm run serve",
     "serve": "webpack serve --node-env=development -c webpack/dev.js",
@@ -6,9 +11,28 @@
     "build": "webpack build --node-env=production -c webpack/build.js"
   },
   "devDependencies": {
+    "@babel/core": "7.19.1",
+    "@babel/preset-env": "7.19.1",
+    "@babel/preset-react": "7.18.6",
+    "babel-loader": "8.2.5",
     "webpack": "5.74.0",
     "webpack-cli": "4.10.0",
     "webpack-dev-server": "4.11.1",
     "webpack-merge": "5.8.0"
-  }
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "browserslist": [
+    "defaults",
+    ">5% in KR",
+    "not dead"
+  ]
 }

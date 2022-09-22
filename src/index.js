@@ -1,11 +1,12 @@
-import { getRandomMinMax } from './utils';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './app/App';
 
-function rollDice(n = 6) {
-  return getRandomMinMax(1, n);
-}
+const container = document.getElementById('root');
+const reactDOMRoot = ReactDOM.createRoot(container);
 
-const h1 = document.createElement('h1');
-
-h1.textContent = rollDice().toString();
-
-document.getElementById('root').append(h1);
+reactDOMRoot.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
