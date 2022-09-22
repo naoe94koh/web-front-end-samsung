@@ -2,13 +2,12 @@ const path = require('path');
 const __ROOT = process.cwd();
 
 const commonConfig = {
-  target: 'web',
-  // target: ['web', 'browserslist'],
-  // resolve: {
-  //   extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.wasm'],
-  // },
+  target: ['web'],
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.wasm'],
+  },
   entry: {
-    main: path.join(__ROOT, 'src/index.js'),
+    main: path.join(__ROOT, 'src/index.jsx'),
   },
   output: {
     path: path.join(__ROOT, 'public'),
@@ -20,6 +19,18 @@ const commonConfig = {
         test: /\.jsx?$/i,
         exclude: /node_modules/,
         use: 'babel-loader',
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
     ],
   },
