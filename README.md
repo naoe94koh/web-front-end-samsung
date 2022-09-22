@@ -10,4 +10,4 @@
 - [x] JSX & Babel Standalone
 - [x] Production Build
 - [x] Babel JavaScript Compiler & Presets
-- [ ] Random Count Up (with React)
+- [x] Random Count Up (with React)
