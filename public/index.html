@@ -11,11 +11,25 @@
     <script src="//unpkg.com/react/umd/react.development.js" crossorigin></script>
     <script src="//unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
     <script src="js/index.js" type="module"></script>
+    <script src="//cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              'pulse-fast': 'pulse 0.2s linear infinite'
+            }
+          }
+        }
+      }
+    </script>
   </head>
 
-  <body>
+  <body class="bg-slate-800 text-white">
     
-    <div id="root"></div>
+    <div id="root">
+      
+    </div>
 
   </body>
 
