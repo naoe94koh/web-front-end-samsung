@@ -6,7 +6,7 @@ React 라이브리러 사용법
 - [x] Virtual DOM & Virtual Node
 - [x] React Component vs. React Element
 - [x] React State vs. Props
-- [ ] Event Handling — DOM vs. React
+- [x] Event Handling — DOM vs. React
 - [ ] JSX & Babel Standalone
 - [ ] Production Build
 - [ ] Babel JavaScript Compiler & Presets
