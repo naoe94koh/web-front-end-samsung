@@ -1,0 +1,1 @@
+{"version":3,"file":"Headline.js","names":["Headline","props","children"],"sources":["../../../src/components/Headline.js"],"sourcesContent":["const Headline = (props) => <h2>{props.children}</h2>;\n\nexport default Headline;\n"],"mappings":"AAAA,IAAMA,QAAQ,GAAG,SAAXA,QAAW,CAACC,KAAD;EAAA,OAAW,gCAAKA,KAAK,CAACC,QAAX,CAAX;AAAA,CAAjB;;AAEA,eAAeF,QAAf"}
