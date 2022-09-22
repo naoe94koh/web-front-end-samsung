@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import classes from './Counter.module.css';
 
-export function Counter({ count: initialCount, step, min, max }) {
+export function Counter({
+  count: initialCount,
+  step,
+  min,
+  max,
+  onUpdate,
+  product,
+}) {
   const [count, setCount] = useState(initialCount);
 
   let lessThenAndEqualMin = count <= min;
@@ -11,12 +18,14 @@ export function Counter({ count: initialCount, step, min, max }) {
     let updateValue = count - step;
     updateValue = updateValue <= min ? min : updateValue;
     setCount(updateValue);
+    onUpdate?.(product.id, false);
   };
 
   const handleIncrement = () => {
     let updateValue = count + step;
     updateValue = updateValue >= max ? max : updateValue;
     setCount(updateValue);
+    onUpdate?.(product.id, true);
   };
 
   return (
