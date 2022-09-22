@@ -7,7 +7,7 @@ React 라이브리러 사용법
 - [x] React Component vs. React Element
 - [x] React State vs. Props
 - [x] Event Handling — DOM vs. React
-- [ ] JSX & Babel Standalone
+- [x] JSX & Babel Standalone
 - [ ] Production Build
 - [ ] Babel JavaScript Compiler & Presets
 - [ ] Random Count Up (with React)
