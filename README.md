@@ -4,8 +4,8 @@ React 라이브리러 사용법
 
 - [x] CDN — React, ReactDOM
 - [x] Virtual DOM & Virtual Node
-- [ ] React Component vs. React Element
-- [ ] React State vs. Props
+- [x] React Component vs. React Element
+- [x] React State vs. Props
 - [ ] Event Handling — DOM vs. React
 - [ ] JSX & Babel Standalone
 - [ ] Production Build

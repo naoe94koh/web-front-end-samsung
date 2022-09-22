@@ -16,6 +16,20 @@
   items = items.map((item) => {
     const listItem = document.createElement('li');
     listItem.textContent = item;
+
+    // 삭제 버튼 생성
+    const deleteButton = document.createElement('button');
+    deleteButton.setAttribute('type', 'button');
+    deleteButton.setAttribute('aria-label', '삭제');
+    deleteButton.setAttribute('title', '삭제');
+    deleteButton.style.marginLeft = '8px';
+    deleteButton.textContent = '×';
+    deleteButton.addEventListener('click', (e) => {
+      e.target.parentElement.remove();
+    });
+
+    listItem.append(deleteButton);
+
     return listItem;
   });
 
