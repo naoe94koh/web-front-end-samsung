@@ -1,5 +1,5 @@
 # React 툴체인
 
-- [ ] Create React App
-- [ ] Vite
+- [x] Create React App
+- [x] Vite
 - [ ] Next.js
