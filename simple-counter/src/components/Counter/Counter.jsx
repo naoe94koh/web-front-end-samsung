@@ -4,6 +4,21 @@ import classes from './Counter.module.css';
 export function Counter({ count: initialCount, step, min, max }) {
   const [count, setCount] = useState(initialCount);
 
+  let lessThenAndEqualMin = count <= min;
+  let greaterThenAndEqualMax = count >= max;
+
+  const handleDecrement = () => {
+    let updateValue = count - step;
+    updateValue = updateValue <= min ? min : updateValue;
+    setCount(updateValue);
+  };
+
+  const handleIncrement = () => {
+    let updateValue = count + step;
+    updateValue = updateValue >= max ? max : updateValue;
+    setCount(updateValue);
+  };
+
   return (
     <div className={classes.container}>
       <button
@@ -11,7 +26,8 @@ export function Counter({ count: initialCount, step, min, max }) {
         type="button"
         title="카운트 감소"
         aria-label="카운트 감소"
-        onClick={() => setCount(count - step)}
+        disabled={lessThenAndEqualMin}
+        onClick={handleDecrement}
       >
         -
       </button>
@@ -21,7 +37,8 @@ export function Counter({ count: initialCount, step, min, max }) {
         type="button"
         title="카운트 증가"
         aria-label="카운트 증가"
-        onClick={() => setCount(count + step)}
+        disabled={greaterThenAndEqualMax}
+        onClick={handleIncrement}
       >
         +
       </button>

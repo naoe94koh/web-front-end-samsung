@@ -1,23 +1,38 @@
 .container {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  gap: 8px;
-  border: 2px solid currentColor;
+  align-items: center;
+  border: 2px solid #eee;
+  border-radius: 16px;
   padding: 12px;
+  background: #fff;
   color: #222;
+  color: #4939f3;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0 0 0 / 5%);
 }
 
 .button {
   cursor: pointer;
-  padding: 0.4em 0.8em;
+  border: 1px solid #e4e4e4;
   border-radius: 6px;
-  border: 1px solid currentColor;
-  background: #f2f2f2;
-  color: #222;
+  padding: 0.4em 0.8em;
+  font-size: 1rem;
+  background: #fdfdfd;
+  color: inherit;
 }
 
-.button:active {
+.button:not(:disabled):hover {
+  box-shadow: inset 0 0 10px #e4e4e4;
+}
+
+.button:not(:disabled):active {
   scale: 0.96;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  color: #adadad;
 }
 
 .decrement {
@@ -25,7 +40,8 @@
 }
 
 .output {
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .increment {
