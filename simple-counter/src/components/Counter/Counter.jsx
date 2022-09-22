@@ -2,11 +2,14 @@ import { useState } from 'react';
 import classes from './Counter.module.css';
 
 export function Counter({ count: initialCount, step, min, max }) {
-  const [count, setCount] = useState(initialCount);
-
+  const [count, setCount] = useState(() =>{
+    initialCount = initialCount > max ? max : initialCount;
+    initialCount = initialCount < min ? min : initialCount;
+    return initialCount
+  });
   let lessThenAndEqualMin = count <= min;
   let greaterThenAndEqualMax = count >= max;
-
+  
   const handleDecrement = () => {
     let updateValue = count - step;
     updateValue = updateValue <= min ? min : updateValue;
