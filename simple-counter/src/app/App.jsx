@@ -1,8 +1,18 @@
-import { useState } from 'react';
-import classes from './App.module.css';
+// import './App.css'; // import css file (class GLOBAL)
+import classes from './App.module.css'; // import css modules (class UNIQUE(LOCAL): GLOBAL)
+
+import { useState, useEffect } from 'react';
 import { Counter } from '../components/Counter/Counter';
 
+// React 함수 컴포넌트 중심 설계
+// useState()
+// 상태 관리 (업데이트 시점 → 업데이트 이후 콜백: 특정 상태에 의존하는 이펙트 콜백 함수 설정)
+// 사이드 이펙트 관리
+// useEffect()
+
 function App() {
+  /* 관심사: products ------------------------------------------------------------ */
+
   const [products, setProducts] = useState([
     {
       id: 'product-1',
@@ -16,21 +26,34 @@ function App() {
     },
   ]);
 
+  useEffect(() => {
+    setTotalPrice(
+      products.reduce((total, { price, amount }) => {
+        return total + price * amount;
+      }, 0)
+    );
+  }, [products]);
+
+  /* 관심사: totalPrice ------------------------------------------------------------ */
+
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const updateProductItem = (productId, isInc) => {
-    // const updateProducts = products.map(product => {
-    //   if (product.id === productId) {
-    //     product.amount
-    //   }
-    //   return product;
-    // })
+  /* 업데이트 함수 ------------------------------------------------------------------ */
 
-    if (isInc) {
-      console.log('inc');
-    } else {
-      console.log('dec');
-    }
+  const updateProductItem = (productId, isInc) => {
+    setProducts((products) => {
+      let updateValue = isInc ? 1 : -1;
+
+      return products.map((product) => {
+        if (product.id === productId) {
+          return {
+            ...product,
+            amount: product.amount + updateValue,
+          };
+        }
+        return product;
+      });
+    });
   };
 
   return (
@@ -40,7 +63,7 @@ function App() {
         {products.map((product, index) => (
           <Counter
             key={product.id}
-            product={product}
+            data-id={product.id}
             count={product.amount}
             onUpdate={updateProductItem}
           />
