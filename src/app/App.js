@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styled, { css } from 'styled-components/macro';
 import GlobalStyle from 'styles/GlobalStyle';
 import { Cart } from 'components';
+import { CartProvider } from 'context/cartContext';
 
 export default function App() {
   let [loading, setLoading] = useState(true);
@@ -58,6 +59,8 @@ export default function App() {
     }));
   }, []);
 
+  
+
   if (loading) {
     return <Loading role="alert">제품 정보 로딩 중...</Loading>;
   }
@@ -70,12 +73,9 @@ export default function App() {
     <>
       <GlobalStyle />
       <Container>
-        <Cart
-          title={carts.title}
-          products={carts.products}
-          total={carts.totalPrice}
-          onUpdate={handleUpdateAmount}
-        />
+        <CartProvider value={{...carts, handleUpdateAmount}}>
+        <Cart/>
+        </CartProvider>
       </Container>
     </>
   );
