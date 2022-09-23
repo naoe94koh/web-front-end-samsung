@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-// CSS in JS
-// JS Programming
-// Standards
-// A11Y
-
 export const SR_Only = styled.span`
   overflow: hidden;
   position: absolute;
@@ -32,5 +27,3 @@ export const SR_Only = styled.span`
       white-space: initial;    
     }`}
 `;
-
-// SR_Only.displayName = 'SR_Only';
