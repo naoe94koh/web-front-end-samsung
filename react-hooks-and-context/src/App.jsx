@@ -1,11 +1,13 @@
 import styles from './App.module.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   A11yHidden,
   SR_Only,
   Banner,
   Spinner,
   ErrorDisplay,
+  ErrorBoundary,
+  FormControl,
   SkipToContent,
   Content,
 } from './components';
@@ -13,12 +15,17 @@ import {
 import { useFetch } from './hooks/useFetch';
 
 function App() {
+  const containerRef = useRef(null);
+
+  const [visible, setVisible] = useState(true);
+
   const { loading, error, data } = useFetch('/api/todos');
 
-  console.log({
-    loading,
-    error,
-    data,
+  useEffect(() => {
+    if (containerRef.current) {
+      // jQuery 라이브러리
+      // $(containerRef.current).plugin();
+    }
   });
 
   if (loading) {
@@ -41,10 +48,23 @@ function App() {
   }
 
   return (
-    <div className={styles.container}>
-      <SkipToContent />
-      <Content />
-    </div>
+    <ErrorBoundary>
+      <div ref={containerRef} className={styles.container}>
+        <SkipToContent />
+        <FormControl
+          id="dkwD2ic"
+          label="콘텐츠 표시"
+          type="checkbox"
+          inputProps={{
+            checked: visible,
+            onChange(e) {
+              setVisible(e.target.checked);
+            },
+          }}
+        />
+        {visible && <Content />}
+      </div>
+    </ErrorBoundary>
   );
 }
 

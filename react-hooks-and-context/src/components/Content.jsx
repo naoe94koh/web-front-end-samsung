@@ -1,11 +1,15 @@
+import { useLayoutEffect } from 'react';
 import { Banner } from './Banner';
 import { SR_Only } from './SR_Only.styled';
 import { useFetch } from '../hooks/useFetch';
 
 export const Content = () => {
-  const { loading } = useFetch('/api/comments');
-
-  console.log(loading);
+  useLayoutEffect(() => {
+    let clearId = setInterval(() => console.count(), 1000);
+    return () => {
+      clearInterval(clearId);
+    };
+  }, []);
 
   return (
     <>
