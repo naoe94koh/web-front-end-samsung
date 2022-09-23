@@ -1,9 +1,9 @@
 import styles from './App.module.css';
 import { useState, useEffect, useRef } from 'react';
 import {
-  A11yHidden,
-  SR_Only,
-  Banner,
+  // A11yHidden,
+  // SR_Only,
+  // Banner,
   Spinner,
   ErrorDisplay,
   ErrorBoundary,
@@ -19,7 +19,7 @@ function App() {
 
   const [visible, setVisible] = useState(true);
 
-  const { loading, error, data } = useFetch('/api/todos');
+  const { loading, error /* data */ } = useFetch('/api/todos');
 
   useEffect(() => {
     if (containerRef.current) {
