@@ -7,7 +7,7 @@ export function Counter({
   min,
   max,
   onUpdate,
-  product,
+  ...restProps
 }) {
   const [count, setCount] = useState(initialCount);
 
@@ -18,18 +18,18 @@ export function Counter({
     let updateValue = count - step;
     updateValue = updateValue <= min ? min : updateValue;
     setCount(updateValue);
-    onUpdate?.(product.id, false);
+    onUpdate?.(restProps['data-id'], false);
   };
 
   const handleIncrement = () => {
     let updateValue = count + step;
     updateValue = updateValue >= max ? max : updateValue;
     setCount(updateValue);
-    onUpdate?.(product.id, true);
+    onUpdate?.(restProps['data-id'], true);
   };
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} {...restProps}>
       <button
         className={`${classes.button} ${classes.decrement}`}
         type="button"

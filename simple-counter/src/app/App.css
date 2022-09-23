@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  row-gap: 8px;
+  text-align: center;
+  padding: 3rem;
+}
+
+.output {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
