@@ -5,10 +5,49 @@ import { A11yHidden } from './components';
 function App() {
   return (
     <div className={styles.container}>
+      <div className="skipToContent">
+        <A11yHidden
+          as="a"
+          href="#section-1"
+          style={{
+            position: 'fixed',
+            top: 0,
+            right: 20,
+          }}
+          focusable
+        >
+          Go Section 1
+        </A11yHidden>
+        <A11yHidden
+          as="a"
+          href="#section-2"
+          style={{
+            position: 'fixed',
+            top: 0,
+            right: 20,
+          }}
+          focusable
+        >
+          Go Section 2
+        </A11yHidden>
+        <A11yHidden
+          as="a"
+          href="#section-3"
+          style={{
+            position: 'fixed',
+            top: 0,
+            right: 20,
+          }}
+          focusable
+        >
+          Go Section 3
+        </A11yHidden>
+      </div>
+
       <h1>App</h1>
 
       <section>
-        <A11yHidden as="h2">Section Title</A11yHidden>
+        <h2 id="section-1">Section Title</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci aut
           earum corporis amet fugiat nobis eligendi, repudiandae laboriosam illo
