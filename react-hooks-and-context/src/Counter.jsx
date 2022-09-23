@@ -1,25 +1,17 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, memo } from 'react';
 import { any, number } from 'prop-types';
 
 const Counter = ({ count: initialCount }) => {
-  const [count, setCount] = useState(initialCount);
+  const [n, setN] = useState(1000);
 
-  // useCallback
-  // 함수 값만 기억
+  useEffect(() => {
+    let clearId = setInterval(() => setN((n) => n - 10), 600);
+    return () => clearInterval(clearId);
+  }, []);
+
+  const [count, setCount] = useState(initialCount);
   const handleInc = useCallback(() => setCount((count) => count + 1), []);
   const handleDec = useCallback(() => setCount((count) => count - 1), []);
-
-  // useMemo
-  // 함수를 포함한 모든 값을 기억
-  // 숫자, 문자, 불리언, ...., 함수, 객체, 배열, 클래스
-  const memoIncButton = useMemo(
-    () => <Counter.Button onClick={handleInc}>값 증가</Counter.Button>,
-    []
-  );
-  const memoDecButton = useMemo(
-    () => <Counter.Button onClick={handleDec}>값 감소</Counter.Button>,
-    []
-  );
 
   return (
     <div
@@ -28,9 +20,10 @@ const Counter = ({ count: initialCount }) => {
         padding: 2em;
       `}
     >
-      {memoIncButton}
-      {memoDecButton}
+      <Counter.Button onClick={handleInc}>값 증가</Counter.Button>
+      <Counter.Button onClick={handleDec}>값 감소</Counter.Button>
       <Counter.Display count={count} />
+      {n}
     </div>
   );
 };
@@ -43,8 +36,9 @@ Counter.propTypes = {
   count: number,
 };
 
-// eslint-disable-next-line react/prop-types
-Counter.Button = function CounterButton({ children, ...restProps }) {
+/* CounterButton ------------------------------------------------------------ */
+
+Counter.Button = memo(function CounterButton({ children, ...restProps }) {
   return (
     <button
       type="button"
@@ -56,13 +50,15 @@ Counter.Button = function CounterButton({ children, ...restProps }) {
       {children}
     </button>
   );
-};
+});
 
 Counter.Button.propTypes = {
   children: any,
 };
 
-Counter.Display = function CountDisplay({ count }) {
+/* CounterDisplay ----------------------------------------------------------- */
+
+Counter.Display = memo(function CountDisplay({ count }) {
   return (
     <output
       css={`
@@ -73,7 +69,7 @@ Counter.Display = function CountDisplay({ count }) {
       {count}
     </output>
   );
-};
+});
 
 Counter.Display.propTypes = {
   count: number,
